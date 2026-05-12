@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: cadetblue;
+    border-bottom: 2px solid coral;
+    margin-top:0;
+    height:15vh;
+    position:fixed;
+    width: 100vw;
+}
+
+header p{
+    margin-top:0;
+    font-size: 2em;
+    font-weight: bold;
+    padding-left:3vw;
+    padding-top:3vh;
+}
+section {
+    height:100vh;
+    color: white;
+    text-align: center;
+
+}
+section img {
+    height: 25vh;
+    width: 15vw;
+    /* border-radius: 50%; */
+}
+section p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+section a{
+    color:white;
+    text-decoration: none;
+    background-color: coral;
+    border:2px solid white;
+    padding:2vh;
+    border-radius: 10px;
+    display:block;
+    width: 10vw;
+    margin:1em auto;
+}
+
+section a:hover{
+    background-color: white;
+    color: coral;
+    border: 2px solid coral;
+    border-radius: 10px;
+}
+footer{
+    height:12vh;
+    background-color: cadetblue;
+    border-top: 2px solid coral;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+#section-1{
+    background:url(./images/bg3.jpg);
+     /* no-repeat center center; */
+     background-attachment: fixed;
+
+}
+#section-1 h2{
+    margin-top:0;
+    padding-top:20vh;
+}
+#section-2{
+    background:url(./images/bg2.jpg);
+     /* no-repeat center center; */
+     height: 90vh;
+
+}   
+#section-2 h2{
+    margin-top:0;
+    padding-top:20vh;
+}

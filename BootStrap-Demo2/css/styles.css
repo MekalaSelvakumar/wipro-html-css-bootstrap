@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+.navbar-brand img{
+    width: 10vw;
+    height: 10vh;
+}
+/* .custom-nav{
+    background-color: cadetblue !important;
+    border-bottom: 2px solid coral;
+} */
+ nav.bgcolor-primary{
+    background-color: cadetblue !important;
+    border-bottom: 2px solid coral;
+ }
+ .header-section{
+    width: 100vw;
+ }
+
+ .navbar-nav{
+    margin-right:7vw;
+ }
+ .navbar-nav .nav-item a.nav-link:hover{
+    color:white !important;
+    border-bottom: 2px solid coral;
+ }
+ .carousel{
+    height: 80vh;
+ }
+ .carousel-Item, .carousel-inner, .carousel-inner img{
+        height: 80vh;
+        width: 100vw;
+    }
+.jumbotron{
+    background-color:rgba(213, 210, 210, 0.679);
+}
+.footer-section{
+    background-color: cadetblue;
+    border-top: 2px solid coral;
+    color: white;
+}
+.footer-section img{
+      height: 12vh;
+      width: 10vw;
+      padding-top: 1em;
+}
+.fa-brands{
+    padding: 0.5em;
+}

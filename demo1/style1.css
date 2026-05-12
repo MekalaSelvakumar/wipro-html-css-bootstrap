@@ -1,0 +1,19 @@
+body{
+    background-color: wheat;
+}
+#tab1{
+    border: 5px double rgb(10, 213, 101);
+    padding: 10px;
+     margin: 10px;
+     border-radius: 10px;
+     margin: auto;
+    border-collapse: collapse;
+
+     
+}
+/*  selects the th elements - which are inside the element with id "tab1" */
+#tab1 th, #tab1 td{
+    border: 5px double rgb(10, 213, 101);
+    padding: 10px;
+     background-color: rgb(255, 255, 255);
+}
