@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <h1> Form </h1>
+    <form id="form1" method="get" action="" onsubmit="return validate(event)">
+        <table id="tab1">
+            <tr>
+                <td>
+                 <label for="username"> User Name: </label>
+                </td>
+                <!-- <td> <input type="text" id="username" name="username"  pattern="[A-Za-z]{3,10}"
+                     required  minlength="3" maxlength="10" value="HI"></td> -->
+                    <td> <input type="text" id="username" name="username"  pattern="[A-Za-z]{3,10}"
+                       > 
+                       <span id="errUsername" class="error"> </span>
+                    
+                    </td>
+            </tr>
+            <tr>                <td>
+                    <label for="emailId">Email: </label>
+                </td>
+                <td> <input type="email" id="emailId" name="email"  placeholder="Enter Email Id"  >
+                <span id="errEmailId" class="error"> </span>
+                </td>
+            </tr>
+           <tr>
+            <td> Enter Age</td>
+            <td> <input type="number" name="age" id="age" min="18" max="100">
+            <span id="errAge" class="error"> </span>
+            </td>
+           </tr>
+             <tr>
+            <td>  <label for="doj"> Date Of Joining </label></td>
+            <td> <input type="date" name="doj" id="doj"></td>
+           </tr>
+            <tr>
+            <td>  <label for="address"> Address </label></td>
+            <td> <textarea  col="100" rows="5"  name="address" id="address"> </textarea></td>
+           </tr>
+           <tr>
+            <td> <label for="hobby">Hobbies</label></td>
+            <td>  <input type="checkbox" name="hobby" id="read">  <label for="read">Reading</label>
+                 <input type="checkbox" name="hobby" id="travel">  <label for="travel">Travelling</label> <br>
+                 <input type="checkbox" name="hobby" id="cook">  <label for="cook">Cooking</label>
+                    <input type="checkbox" name="hobby" id="sports">  <label for="sports">Sports</label>    
+                        
+            </td>
+           </tr>
+           <tr>
+            <td> <label for="gender"> Gender</label></td>
+            <td> <input type="radio" name="gender" id="male">  <label for="male">Male</label>
+                 <input type="radio" name="gender" id="female">  <label for="female">Female</label>
+                    <input type="radio" name="gender" id="trans">  <label for="trans">TransGender</label>
+            </td>
+           </tr>
+           <tr>
+            <td> <label for="country">Country</label></td>
+            <td> <select name="country" id="country">
+                   <option value="-">--Select Country--</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                </select> </td>
+           </tr>
+
+
+            <tr> <td> <input type ="reset"  value="Clear"> </td>>
+           <td> <input type="submit" value="Submit" >
+            <!-- <input type="submit" value="Submit"  onclick="return validate();"> -->
+        </td></tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+body{
+    background-color: wheat;
+}
+#tab1 {
+    background-color: lightblue;
+    color:blue;
+    font-size: 20px;
+    border: 2px solid blue;
+    margin:auto;
+}
+#tab1 td{
+    border: 1px solid blue;
+    padding: 5px;
+    border-collapse: collapse;
+}
+h1{
+    text-align: center ;
+    color:blue;
+}
+input,select,textarea {
+       font-size: 20px;
+       color:blue;
+ 
+}
+.error{
+    color:red;
+}
