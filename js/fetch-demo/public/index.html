@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+
+<body>
+    <h1> List of Customers</h1>
+    <table id="cust-tab">
+        <thead>
+            <tr>
+                <th> Customer Id</th>
+                <th> Customer Name</th>
+                <th> Customer Email Id</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <section id="add-section">
+        <h1> Add Customer</h1>
+        <!-- <form method="post" onsubmit=" return addCustomer()"> -->
+        <form method="post" id="add-form">
+            <table class="custtab">
+                <tr>
+                    <td><label for="custname">Name </label></td>
+                    <td><input type="text" name="custname" id="custname" placeholder="Enter Your Name"> </td>
+                </tr>
+                <tr>
+                    <td><label for="custemail">Email Id </label></td>
+                    <td><input type="email" name="custemail" id="custemail" placeholder="Enter Your Email Id"> </td>
+                </tr>
+                <tr>
+                    <td> <input type="reset" value="clear"></td>
+                    <td><input type="submit" value="Save"> </td>
+                </tr>
+            </table>
+
+        </form>
+    </section>
+    <!--  update section -->
+
+    <section id="update-section">
+        <h1>Update Customer</h1>
+        <form method="post" id="update-form">
+            <!-- <input type="text"  id="custId" hidden> -->
+            <table class="custtab">
+                <tr>
+                    <td><label for="custId">Customer Id </label></td>
+                    <td><input type="text" name="custId" id="custId"  readonly> </td>
+                </tr>
+
+                <tr>
+                    <td><label for="newcustname">Name </label></td>
+                    <td><input type="text" name="newcustname" id="newcustname" placeholder="Enter Your Name"> </td>
+                </tr>
+                <tr>
+                    <td><label for="newcustemail">Email Id </label></td>
+                    <td><input type="email" name="newcustemail" id="newcustemail" placeholder="Enter Your Email Id"> </td>
+                </tr>
+                <tr>
+                    <td> <input type="reset" value="Cancel"></td>
+                    <td><input type="submit" value="Update"> </td>
+                </tr>
+            </table>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

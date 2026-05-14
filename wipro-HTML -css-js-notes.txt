@@ -851,3 +851,341 @@ ES6+ features  - let, const, arrow function, aync/await
 
 ----------------
 
+DOM - Document Object Model
+  - programming interface that represents an HTML document as a tree of Objects
+
+it allows JS to
+1. Access HTML elements
+2. Changing content
+3. Change style
+4. Add/remove elements
+5. Handle events
+
+Browser loads an HTML page
+Browser reads the HTML
+Convert it into DOM tree
+Js interacts with that tree
+
+
+If you add the JS <script> tag inside the head,
+This js runs before the HTML elements are created (before DOM) ,it cannot find them
+   - cannot read properties of null
+   
+You need to wait until the DOM is initialized (loaded) before executing the your script
+
+
+1. Add the script tag before the end of body tag
+2.  Modern approach 
+DOMContentLoaded Event
+
+document.addEventListenenr("DOMContentLoaded", function(){
+var  para =document.getElementsByTagName("p")[0]; 
+console.log(para);
+ console.log(para.innerText);
+ // innerText will give the text content of the element without any html tags.
+ console.log(para.innerHTML);
+
+     });
+
+
+DOMContentLoaded  -- > HTML DOM fully loaded
+Elements created
+But Images/css may still load later
+
+Browser reads HTML
+Creates DOM tree
+Fires event DOMContentLoaded
+Loads images/videos/etc
+Fires window.onload
+
+
+-------------
+
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stops the form from submitting normally
+    console.log("Form submitted!");
+});
+
+
+
+document.querySelector("#myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const name = document.querySelector('input[name="name"]').value;
+    
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
+
+    alert("Submitted: " + name);
+});
+
+
+--------------
+
+synchronous  - Blocking
+JS  - single thread language
+ - js executes one stmt at a time
+ - it has only one main execution thread
+because of this - long running tasks can block the application
+
+ call to the API
+ database calls
+ 
+request --------------------------> API
+        <-----------------------
+        response
+
+console.log("start");
+heavy task     // browser becomes slow/freeze , user cannot interact with the page  - blocking
+console.log("end");
+
+
+
+let data = getDataFromServer();
+console.log(data)
+if server takes 5 seconds
+ entire application waits
+bad user experience
+
+
+console.log("start");
+setTimeout( ()=>{
+console.log("Data Received");
+ },3000);
+console.log("end");
+
+
+
+Call Stack
+Web APIs
+Callback Queue
+Event loop
+
+
+ JS code
+  Call stack
+Async Task sent to Web APIs
+
+Task Completed
+Callback Queue
+
+Event Loop    - always checks stack is empty, if empt the method(callback) moved from callback queue to stack
+Call stack
+
+
+--
+
+Asynchronous execution in JavaScript means the code doesn’t wait for a long-running task to finish.
+Instead, JavaScript moves on to the next line, and the long task finishes in the background.
+When the task is done, it notifies JavaScript to continue using callbacks, promises, or async/await.
+
+Why do we need asynchronous execution?
+
+JavaScript runs on a single thread (one line of code at a time).
+If it waited for slow operations like:
+
+API calls
+
+Reading files
+
+Database queries
+
+Timers (setTimeout)
+
+…your entire page/app would freeze.
+
+Asynchronous execution prevents that freeze.
+
+Synchronous (Blocking)
+The next line waits until the current line finishes.
+
+console.log("Start");
+
+function syncTask() {
+  for (let i = 0; i < 5000000000; i++) {} // heavy loop
+}
+
+syncTask();
+console.log("End");
+
+Output:
+Start
+(huge delay…)
+End
+
+
+Asynchronous (Non-Blocking)
+The heavy work happens in the background.
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async task done");
+}, 2000);
+
+console.log("End");
+
+Output:
+Start
+End
+Async task done   (after 2 seconds)
+
+JavaScript does not wait for setTimeout.
+
+ How does JavaScript handle async code?
+Using:
+
+
+Callbacks → old style
+
+
+Promises → modern
+
+
+async / await → easiest
+
+---
+Callback function
+ A function passed as an argument to another function which is executed later
+
+setTimeout(() => {
+  console.log("Async task done");
+}, 2000);
+
+
+function greet(name){
+console.log("Hello"+name);
+}
+
+function processUser(callback) {
+let username="John";
+callback(username);
+}
+
+processUser(greet)
+
+
+------------
+
+Promise is an object that represents the future result of an asynchronous operation
+
+operation may complete later
+operation may succeed or fail
+
+
+before promises, asynchronous code used callbacks
+
+difficult to read
+deeply nested callback
+difficult to maintain
+    - callback Hell
+
+Promises solves this by providing cleaner async Handling
+
+You ordered food online
+Restaurant gives a promise
+
+Food Preparing    -    Pending
+food delivered   -   fulfilled
+delivery failed   -  Rejected
+ 
+
+Same in JS
+Promises States
+Pending  - operation running
+Fullfilled  - Success
+Rejected - failrure
+
+
+
+let promise = new Promise( (resolve,reject)=>{
+    let success=true;
+    if (success){
+        resolve("Data Loaded");
+    }
+    else {
+        reject("Error Ocurred");
+    }
+})
+
+promise
+.then ( result =>{
+    console.log(result);
+})
+.catch(error=>{
+    console.log(error);
+})
+
+
+
+
+
+fetchData()
+.then( data =>processData(data))
+.then(result =>saveData(result))
+.catch(err=> console.log(err))
+
+
+Promise handle the async operation
+avoid callback hell
+improve readability
+better error handling
+work well with async/await
+
+
+API calls
+Database operation
+File loading
+Fetch Requests
+Timers
+Async operation
+
+-----
+Fetch  --  used to make HTTP request
+GET   -   to retrieve the values
+POST   - to create
+PUT  - update
+DELETE - delete
+
+it returns Promise
+
+
+--
+json - JavaScript Object Notation
+- it is a lightweight data format used for
+    Storing data
+    exchange data between system
+    sending data  between client and server
+
+JSON - language indendendent
+  - it is based on the javascript object syntax
+
+{
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  }
+
+key - vaule  pair
+
+key - double quotes

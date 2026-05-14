@@ -1,0 +1,24 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "Tom",
+      "email": "tom@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Jerry",
+      "email": "jerry@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Dora",
+      "email": "dora@gmail.com"
+    },
+    {
+      "id": "d44b",
+      "name": "Beem",
+      "email": "beem@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+body{
+    background-color: wheat;
+}
+#cust-tab{
+    border:5px solid blue;
+    font-size: 25px;
+    color:blue;
+    margin:auto
+
+}
+#cust-tab th, #cust-tab td{
+    border: 2px solid blue;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+h1{
+    color:blue;
+    text-align: center;
+    text-decoration:  red underline ;
+}
+button {
+    font-size: 16px;
+    color:blue;
+    background-color:aquamarine;
+}
+.delete-btn{
+    background-color: tomato;
+    color: white;
+    border: 2px solid blue;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn{
+    background-color: rgb(51,221,144);
+    color: white;
+    border: 2px solid rgb(238,25,164);
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custtab{
+    border:5px solid rgb(255, 0, 72);
+    font-size: 20px;
+    margin:auto
+
+}
+ .custtab td{
+    border: 2px solid rgb(255, 0, 72);
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+input {
+    font-size:20px;
+    color:blue;
+}
